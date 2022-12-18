@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k8s-demo
+data:
+  countries: "France,Argentina"
+  log-level: "info"

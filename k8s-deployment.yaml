@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: predictor
+  labels:
+    app: predictor
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: predictor
+  template:
+    metadata:
+      labels:
+        app: predictor
+        app.kubernetes.io/name: predictor
+    spec:
+      containers:
+        - name: predictor
+          image: k8sdemo/predictor:2.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080

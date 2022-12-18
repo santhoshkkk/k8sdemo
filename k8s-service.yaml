@@ -1,0 +1,13 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: predictor
+spec:
+  selector:
+    app.kubernetes.io/name: predictor
+  ports:
+    - name: predictor
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
